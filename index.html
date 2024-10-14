@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manvi Hemanth - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: medium;
+            color: #3c3c3c;
+            font-family: 'Cormorant Unicase', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #e6b17f;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #e6b17f;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: left;
+            max-width: 40%;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .about-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #EBBB74;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .about-btn:hover {
+            background-color: #D28C3D;
+        }
+
+        .hero-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+}
+
+        .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+.tagline {
+    position: absolute;
+    right: 190px; 
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    text-align: right;
+    line-height: 1;
+    z-index: 2;
+}
+
+        
+
+        .tagline .idea {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+        }
+
+        .tagline .into {
+            font-family: 'Bonheur Royale', cursive;
+            font-weight: normal;
+        }
+
+        .tagline .action {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .social-links {
+            position: fixed;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        .social-links a {
+            display: block;
+            width: 30px;
+            height: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .social-links img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .designation {
+    position: fixed; 
+    bottom: 10px; 
+    right: 20px;
+    font-size: 24px;
+    color: #EBBB74;
+    opacity: 1; 
+    z-index: 2; 
+}
+
+
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 40px;
+                z-index: 2;
+            }
+
+            .hero-image {
+                position: relative;
+                width: 100%;
+                height: 60vh;
+                margin-top: 40px;
+            }
+
+            .tagline {
+                position: relative;
+                right: 0;
+                text-align: center;
+                margin-top: 20px;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-image {
+                height: 50vh;
+            }
+
+            .tagline {
+                font-size: 36px;
+            }
+
+            .hero-content h1 {
+                font-size: 20px;
+            }
+
+            .social-links {
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">Manvi Hemanth</div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="about.html">About me</a>
+                <a href="#">Works</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Building ideas that <br> define me.</h1>
+                <a href="about.html" class="about-btn">About me</a>
+            </div>
+            <div class="hero-image">
+                <img src="test trial.png" alt="Manvi Hemanth" class="profile-img">
+            </div>
+            <div class="tagline">
+                <span class="idea">Ideas</span> <span class="into">into</span><br>
+                <span class="action">Action.</span>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.behance.net/manvihemanth" aria-label="Behance">
+                <img src="behance-2161.png" alt="Behance">
+            </a><br>
+            <a href="https://www.instagram.com/manvi_hemanth/" aria-label="Instagram">
+                <img src="instagram-logo-8869.png" alt="Instagram">
+            </a><br>
+            <a href="#" aria-label="LinkedIn">
+                <img src="linkedin-130.png" alt="LinkedIn">
+            </a><br>
+            <a href="https://x.com/Manvi94292172" aria-label="Twitter">
+                <img src="twitter-x-logo-black-round-20851.png" alt="Twitter">
+            </a>
+        </div>
+
+        <div class="designation">UI / UX Designer</div> 
+    </div>
+</body>
+</html>
+

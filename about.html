@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manvi Hemanth - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Poppins:wght@300;400;600;700&family=Grantha+Sangam+MN&family=Zapfino&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'GFS Didot', serif;
+            color: #333;
+        }
+
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #FFFBF5, #FFB8B9, #F5D9FF);
+            opacity: 0.34;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content {
+            width: 50%;
+        }
+
+        .hey {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'GFS Didot', serif;
+            font-size: 5em;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fcb1e6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background-color: #b80385;
+        }
+
+        .image-section {
+            width: 45%;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            background-color: black;
+            padding: 30px 0;
+            margin: 0;
+            font-weight: normal;
+            margin-top: -50px; 
+        }
+
+        .skills {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 30px 100px 50px;
+            flex-wrap: wrap;
+        }
+
+        .skill-box {
+            width: 60px;
+            height: 60px;
+            background-color: #000000;
+            margin: 10px;
+            transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .skill-box:hover {
+            transform: scale(1.1);
+        }
+
+        h3 {
+            margin-top: 100px;
+            margin-bottom: 60px;
+            font-weight: normal;
+            font-size: 24px;
+        }
+
+        .works {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .work-item {
+            width: 18%;
+            margin-bottom: 60px;
+            perspective: 1000px;
+            transition: transform 0.3s ease;
+        }
+
+        .work-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .work-card {
+            width: 100%;
+            height: 0;
+            padding-bottom: 120%;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .work-item:hover .work-card {
+            transform: rotateY(180deg);
+        }
+
+        .work-front, .work-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 43px;
+            overflow: hidden;
+        }
+
+        .work-front {
+            background-color: #f4f4f4;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .work-back {
+            background-color: #EBBB74;
+            color: rgb(255, 255, 255);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            text-align: left; 
+            word-spacing: 1px; 
+        }
+
+
+        .work-back p {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .work-title {
+          margin-top: 20px;
+           color: #666;
+           font-size: 14px;
+            text-align: center;
+          }
+
+        .work-item:hover .work-title {
+         color: #cd8507; 
+         }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column-reverse;
+            }
+
+            .content, .image-section {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+
+            .work-item {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills {
+                padding: 30px 20px;
+            }
+
+            .work-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="content">
+                    <div class="hey">Hey!</div>
+                    <h1>I'M<br>MANVI</h1>
+                    <p>
+                        A Passionate Designer Specializing in UI/UX and Interaction Design.
+                        As a designer, I'm deeply committed to creating user-friendly digital 
+                        experiences that are both functional and visually appealing. I thrive 
+                        on understanding user needs and translating them into intuitive interfaces.
+                    </p>
+                    <p>
+                        My strong problem-solving skills and collaborative mindset allow me to 
+                        contribute effectively in team settings, where I love sharing innovative 
+                        ideas and working together to achieve our goals. I'm always eager to learn 
+                        and grow in my field, and I strive to deliver impactful designs that 
+                        harmonize aesthetics with usability.
+                    </p>
+                    <a href="index.html" class="home-btn">Home</a>
+                </div>
+                <div class="image-section">
+                    <img src="Remove background project-2.png" alt="Manvi Hemanth">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Software Skills</h2>
+    <div class="skills">
+        <div class="skill-box" style="background-image: url('adobe-photoshop-icon.png');"></div>
+        <div class="skill-box" style="background-image: url('adobe-illustrator-icon.png');"></div>
+        <div class="skill-box" style="background-image: url('Logo-adobe-after-effects-cc-circle-vector-PNG.png');"></div>
+        <div class="skill-box" style="background-image: url('SketchUp-Mark-1200pxl-RGB.png');"></div>
+        <div class="skill-box" style="background-image: url('figma-logo-22789 1.png');"></div>
+    </div>
+
+    <div class="container">
+        <center><h3>Featured Works</h3> </center>
+        <div class="works">
+            <div class="work-item">
+                <div class="work-card">
+                    <div class="work-front" style="background-image: url('stove.png');"></div>
+                    <div class="work-back">
+                        Innovative UI designs focusing on user-centered experiences and intuitive interactions.
+                    </div>
+                </div>
+                <p class="work-title">User Interface</p>
+            </div>
+            <div class="work-item">
+                <div class="work-card">
+                    <div class="work-front" style="background-image: url('mobile.png');"></div>
+                    <div class="work-back">
+                        Seamless integration of UI and UX principles for enhanced user satisfaction and engagement.
+                    </div>
+                </div>
+                <p class="work-title">UI/UX</p>
+            </div>
+            <div class="work-item">
+                <div class="work-card">
+                    <div class="work-front" style="background-image: url('game design.png');"></div>
+                    <div class="work-back">
+                        Captivating game designs that blend creativity with engaging user experiences.
+                    </div>
+                </div>
+                <p class="work-title">Game Design</p>
+            </div>
+            <div class="work-item">
+                <div class="work-card">
+                    <div class="work-front" style="background-image: url('branding.png');"></div>
+                    <div class="work-back">
+                        Distinctive brand identities that communicate core values and resonate with target audiences.
+                    </div>
+                </div>
+                <p class="work-title">Branding</p>
+            </div>
+            <div class="work-item">
+                <div class="work-card">
+                    <div class="work-front" style="background-image: url('graphic dsgn.png');"></div>
+                    <div class="work-back">
+                        Visually stunning graphic designs that effectively convey messages and captivate viewers.
+                    </div>
+                </div>
+                <p class="work-title">Graphic Design</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
